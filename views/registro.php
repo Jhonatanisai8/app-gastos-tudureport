@@ -1,6 +1,5 @@
 <!-- Contenedor único de Registro -->
 <div class="register-card-container">
-
     <div class="register-card">
         <div class="register-header">
             <img class="login-header-logo" src="../img/logo.png" alt="">
@@ -26,6 +25,7 @@
                         class="form-input"
                         placeholder="Tu nombre real"
                         maxlength="10"
+                        pattern="^(?=.*[A-Z])[A-Za-z0-9]+$"
                         required>
                 </div>
             </div>
