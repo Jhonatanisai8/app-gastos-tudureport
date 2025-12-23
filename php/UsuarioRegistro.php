@@ -35,8 +35,19 @@ if ($email != "") {
             echo mensajePlantilla("Error de Registro", "El correo electrónico ya está registrado.");
             exit;
         }
+        $emailConsultar = null;
     } else {
         echo mensajePlantilla("Error de Registro", "El correo electrónico no es válido.");
         exit;
     }
 }
+
+$usuarioConsultar = conexion();
+$usuarioConsultar = $usuarioConsultar->query("SELECT nombre FROM usuarios WHERE nombre='$nombre'");
+if ($usuarioConsultar->rowCount() > 0) {
+    echo mensajePlantilla("Error de Registro", "El nombre de usuario ya está en uso.");
+    exit;
+}
+$usuarioConsultar = null;
+
+
