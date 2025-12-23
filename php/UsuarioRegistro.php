@@ -25,7 +25,18 @@ if (verificarDatos("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*
     echo mensajePlantilla("Error de Registro", "La contraseña no cumple con el formato requerido.");
     exit;
 }
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo mensajePlantilla("Error de Registro", "El correo electrónico no es válido.");
-    exit;
+
+//verificamos si el email ya existe
+if ($email != "") {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailConsultar = conexion();
+        $emailConsultar = $emailConsultar->query("SELECT email FROM usuarios WHERE email='$email'");
+        if ($emailConsultar->rowCount() > 0) {
+            echo mensajePlantilla("Error de Registro", "El correo electrónico ya está registrado.");
+            exit;
+        }
+    } else {
+        echo mensajePlantilla("Error de Registro", "El correo electrónico no es válido.");
+        exit;
+    }
 }
