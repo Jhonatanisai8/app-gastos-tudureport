@@ -23,8 +23,6 @@ function enviar_formulario_ajax(e) {
     .then((response) => {
       let container = document.querySelector(".form-rest");
       container.innerHTML = response;
-
-      // No limpiar automáticamente; el backend definirá cuándo es éxito
     });
 }
 

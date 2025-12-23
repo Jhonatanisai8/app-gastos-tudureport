@@ -6,7 +6,8 @@
             <p>Ingresa tus datos</p>
         </div>
 
-        <form autocomplete="off">
+        <form autocomplete="off"
+            method="post">
             <div class="form-group">
                 <label class="form-label">Nombre de Usuario</label>
                 <div class="input-wrapper">
@@ -37,7 +38,7 @@
                         class="form-input"
                         placeholder="••••••••"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                        maxlength="8"
+                        maxlength="20"
                         required>
                     <button type="button" class="toggle-password" onclick="const p = document.getElementById('passInput'); p.type = p.type === 'password' ? 'text' : 'password';">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -50,6 +51,13 @@
             </div>
 
             <button type="submit" class="btn-submit">Ingresar</button>
+            <?php
+            if (isset($_POST["nombre_usuario"]) && isset($_POST["password"])) {
+                require_once "./php/ValidarData.php";
+                require_once "./php/IniciarSesion.php";
+                require_once "./php/Mensaje.php";
+            }
+            ?>
         </form>
 
         <div class="form-footer">

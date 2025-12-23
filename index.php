@@ -1,5 +1,5 @@
 <?php
-require 'php/IniciarSesion.php';
+require_once './php/IniciarSesion.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
