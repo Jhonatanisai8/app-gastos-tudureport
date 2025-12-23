@@ -51,3 +51,22 @@ if ($usuarioConsultar->rowCount() > 0) {
 $usuarioConsultar = null;
 
 
+//has de la contraseña
+$passwordHas = password_hash($password, PASSWORD_BCRYPT, ["cost" => 10]);
+
+//guardamos los datos
+$guardarUsuario = conexion();
+$dataUsuario = [
+    "nombre" => $nombre,
+    "email" => $email,
+    "password" => $passwordHas
+];
+$guardarUsuario = $guardarUsuario->prepare("INSERT INTO usuarios (nombre, email,password) VALUES (:nombre, :email, :password)");
+$resultado = $guardarUsuario->execute($dataUsuario);
+if ($resultado) {
+    echo mensajePlantilla("Registro Exitoso", "Tu cuenta ha sido creada exitosamente. Ahora puedes iniciar sesión.");
+} else {
+    echo mensajePlantilla("Error de Registro", "Hubo un problema al crear tu cuenta. Por favor, intenta nuevamente.");
+}
+
+$guardarUsuario = null;
