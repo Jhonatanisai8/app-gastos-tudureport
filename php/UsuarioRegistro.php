@@ -11,7 +11,7 @@ $password = limpiarCadena($_POST["password"]);
 
 //verificamos los campos obligatorios
 if ($nombre == "" || $email == "" || $password == "") {
-    mensajePlantilla("Error de Registro", "Todos los campos son obligatorios.");
+    echo mensajePlantilla("Error de Registro", "Todos los campos son obligatorios.");
     exit();
 }
 

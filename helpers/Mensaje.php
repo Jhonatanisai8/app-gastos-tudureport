@@ -1,7 +1,7 @@
 <?php
-function mensajePlantilla(string $titulo, string $parrafo)
+function mensajePlantilla(string $titulo, string $parrafo): string
 {
-    echo "
+    return "
 <div style='
         border: 1px solid #e5e7eb;
         padding: 15px;

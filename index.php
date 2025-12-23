@@ -27,6 +27,7 @@ include "./inc/Head.php"
             }
             if ($_GET['vista'] == "registro") {
                 include './views/registro.php';
+                include './inc/Script.php';
             }
         }
         ?>
