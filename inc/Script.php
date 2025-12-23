@@ -1,9 +1,7 @@
 <script>
     function goBack(e) {
         e.preventDefault();
-        // Simulación de navegación
         alert("Redirigiendo al inicio...");
-        // En un caso real usarías: window.location.href = '/';
     }
 
     // Efecto parallax simple con el mouse
