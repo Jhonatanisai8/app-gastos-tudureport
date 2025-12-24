@@ -17,6 +17,10 @@ include "./inc/Head.php"
             && $_GET['vista'] != "registro"
             && $_GET['vista'] != "404"
         ) {
+            if (!isset($_SESSION['id_usuario'])) {
+                require './views/cerrar_sesion.php';
+                exit();
+            }
             include './inc/Navbar.php';
             include "./views/" . $_GET['vista'] . ".php";
             include './inc/Script.php';
