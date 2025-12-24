@@ -50,5 +50,5 @@ session_regenerate_id(true);
 $_SESSION['id_usuario'] = $datosUsuario['id'];
 $_SESSION['nombre_usuario'] = $datosUsuario['nombre'];
 
-header("Location: index.php?vista=home");
-exit;
+ header("Location: /index.php?vista=home");
+ exit;
