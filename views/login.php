@@ -7,7 +7,8 @@
         </div>
 
         <form autocomplete="off"
-            method="post">
+            method="post"
+            action="/php/IniciarSesion.php">
             <div class="form-group">
                 <label class="form-label">Nombre de Usuario</label>
                 <div class="input-wrapper">
@@ -51,11 +52,6 @@
             </div>
 
             <button type="submit" class="btn-submit">Ingresar</button>
-            <?php
-            if (isset($_POST["nombre_usuario"]) && isset($_POST["password"])) {
-                require_once "./php/IniciarSesion.php";
-            }
-            ?>
         </form>
 
         <div class="form-footer">
