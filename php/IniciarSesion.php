@@ -23,11 +23,11 @@ if (verificarDatos("^(?=.*[A-Z])[A-Za-z0-9]+$", $login_usuario)) {
 if (verificarDatos(
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
     $login_password
-)) {
-    echo mensajePlantilla("¡Error!", "Contraseña inválida.");
-    return;
-}
-
+    )) {
+        echo mensajePlantilla("¡Error!", "Contraseña inválida.");
+        return;
+    }
+    
 $pdo = conexion();
 
 $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE nombre = :nombre");
@@ -45,7 +45,6 @@ if (!password_verify($login_password, $datosUsuario["password"])) {
     return;
 }
 
-session_start(['name' => 'SPM']);
 $_SESSION['id_usuario'] = $datosUsuario['id'];
 $_SESSION['nombre_usuario'] = $datosUsuario['nombre'];
 

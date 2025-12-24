@@ -1,5 +1,5 @@
 <?php
-require_once './php/IniciarSesion.php';
+require_once './inc/EmpezarSesion.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,7 +8,6 @@ include "./inc/Head.php"
 ?>
 
 <body> <?php
-
         if (!isset($_GET['vista']) || $_GET['vista'] == "") {
             $_GET['vista'] = "login";
         }
