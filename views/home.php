@@ -1,5 +1,6 @@
                 <?php
                 $nombreUsuario = $_SESSION['nombre_usuario'];
+                $id = $_SESSION['id_usuario'];
                 ?>
                 <main class="home-container">
                     <div class="welcome-card">
@@ -10,8 +11,7 @@
                         <h3 class="subtitle">
                             Bienvenido de nuevo,
                             <span class="user-name">
-                                <?php echo $nombreUsuario;
-                                ?>
+                                <?php echo $nombreUsuario . '!' . $id; ?>
                             </span>
                         </h3>
                     </div>

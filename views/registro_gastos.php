@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../php/ListarCategorias.php';
+$idUsuario = $_SESSION['id_usuario'];
 ?>
 <div class="expense-form-container">
     <div class="expense-card">
@@ -13,14 +14,21 @@ require_once __DIR__ . '/../php/ListarCategorias.php';
                 Nuevo Gasto
             </h2>
         </header>
-
-        <form action="guardar_gasto.php" method="POST">
+        <div class="form-rest">
+        </div>
+        <form action="../php/GastoRegistro.php"
+            method="POST"
+            class="formularioAjax"
+            autocomplete="off">
 
             <div class="form-group">
                 <label class="form-label">Monto del Gasto</label>
-                <input type="number" name="monto" class="form-control input-monto" step="0.01" placeholder="0.00" required>
+                <input type="number"
+                    name="monto"
+                    class="form-control input-monto" step="0.01"
+                    placeholder="0.00"
+                    required>
             </div>
-
             <div class="form-group">
                 <label class="form-label">Categoría</label>
                 <select name="id_categoria" class="form-control" required>
@@ -35,8 +43,21 @@ require_once __DIR__ . '/../php/ListarCategorias.php';
 
             <div class="form-group">
                 <label class="form-label">Descripción</label>
-                <input type="text" name="descripcion" class="form-control" placeholder="Ej: Cena en restaurante" maxlength="255">
+                <input type="text"
+                    name="descripcion"
+                    class="form-control"
+                    placeholder="Ej: Cena en restaurante"
+                    maxlength="255">
                 <p class="helper-text">¿En qué gastaste este dinero?</p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Fecha</label>
+                <input type="date"
+                    name="fecha"
+                    class="form-control"
+                    value="<?php echo date('Y-m-d'); ?>"
+                    required>
             </div>
 
             <button type="submit" class="btn-save">
