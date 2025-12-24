@@ -53,9 +53,7 @@
             <button type="submit" class="btn-submit">Ingresar</button>
             <?php
             if (isset($_POST["nombre_usuario"]) && isset($_POST["password"])) {
-                require_once "./php/ValidarData.php";
                 require_once "./php/IniciarSesion.php";
-                require_once "./php/Mensaje.php";
             }
             ?>
         </form>

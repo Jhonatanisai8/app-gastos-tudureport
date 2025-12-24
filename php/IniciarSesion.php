@@ -45,6 +45,7 @@ if (!password_verify($login_password, $datosUsuario["password"])) {
     return;
 }
 
+session_regenerate_id(true);
 $_SESSION['id_usuario'] = $datosUsuario['id'];
 $_SESSION['nombre_usuario'] = $datosUsuario['nombre'];
 
