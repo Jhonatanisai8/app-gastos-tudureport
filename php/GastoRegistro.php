@@ -1,7 +1,17 @@
 <?php
+require_once __DIR__ . '/../inc/EmpezarSesion.php';
 require_once __DIR__ . '/ValidarData.php';
 require_once __DIR__ . '/DataBase.php';
 require_once __DIR__ . '/../helpers/Mensaje.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    return;
+}
+
+if (!isset($_SESSION['id_usuario'])) {
+    echo mensajePlantilla("¡Error!", "Debes iniciar sesión para registrar gastos.");
+    return;
+}
 
 //datos 
 $idUsuario = $_SESSION['id_usuario'];
@@ -54,7 +64,7 @@ try {
     $guardarGasto = $guardarGasto->prepare($SQL);
     $guardarGasto->execute($data);
     if ($guardarGasto->rowCount() === 1) {
-        echo mensajePlantilla("¡Éxito!", "Gasto registrado correctamente. " . $idUsuario);
+        echo mensajePlantilla("¡Éxito!", "Gasto registrado correctamente. ");
     } else {
         echo mensajePlantilla("¡Error!", "No se pudo registrar el gasto.");
     }

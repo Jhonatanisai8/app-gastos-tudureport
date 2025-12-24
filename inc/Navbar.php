@@ -1,6 +1,6 @@
 <nav class="app-nav">
 
-    <a href="#" class="nav-brand-desktop">
+    <a class="nav-brand-desktop">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
         </svg>
@@ -8,7 +8,7 @@
     </a>
 
     <div class="nav-menu-wrapper" style="display: contents;">
-        <a href="#" class="nav-item active">
+        <a href="index.php?vista=home" class="nav-item active">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>

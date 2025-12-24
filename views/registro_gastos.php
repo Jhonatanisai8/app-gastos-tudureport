@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . '/../php/ListarCategorias.php';
-$idUsuario = $_SESSION['id_usuario'];
 ?>
 <div class="expense-form-container">
     <div class="expense-card">
