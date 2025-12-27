@@ -7,8 +7,9 @@
         <span>MI APP</span>
     </a>
 
+    <?php $vista = $_GET['vista'] ?? 'home'; ?>
     <div class="nav-menu-wrapper" style="display: contents;">
-        <a href="index.php?vista=home" class="nav-item active">
+        <a href="index.php?vista=home" class="nav-item <?php echo ($vista == 'home') ? 'active' : ''; ?>">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -16,7 +17,7 @@
             <span class="nav-label">Inicio</span>
         </a>
 
-        <a href="index.php?vista=registro_gastos" class="nav-item">
+        <a href="index.php?vista=registro_gastos" class="nav-item <?php echo ($vista == 'registro_gastos') ? 'active' : ''; ?>">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="12" y1="1" x2="12" y2="23"></line>
                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -24,7 +25,7 @@
             <span class="nav-label">Gastos</span>
         </a>
 
-        <a href="index.php?vista=mi_cuenta" class="nav-item">
+        <a href="index.php?vista=mi_cuenta" class="nav-item <?php echo ($vista == 'mi_cuenta') ? 'active' : ''; ?>">
             <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
