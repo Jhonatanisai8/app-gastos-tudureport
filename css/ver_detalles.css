@@ -1,0 +1,114 @@
+.details-container {
+    padding: 90px 20px 120px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.details-title {
+    font-size: 2rem;
+    color: #2563eb;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.details-date {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-nav-date {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-nav-date:hover {
+    background-color: #f3f4f6;
+}
+
+.current-date-display {
+    font-weight: 700;
+    color: #111827;
+}
+
+.expenses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.expense-item {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.expense-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.expense-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.expense-id {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.expense-amount-item {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+.no-expenses {
+    text-align: center;
+    color: #6b7280;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.total-summary {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #111827;
+    margin-top: 10px;
+}
+
+.total-amount {
+    color: #2563eb;
+}

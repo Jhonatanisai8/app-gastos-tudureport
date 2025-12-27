@@ -32,5 +32,11 @@
                 }
                 ?>
           </div>
+
+          <div style="margin-top: 20px;">
+              <a href="index.php?vista=ver_detalles" style="display: inline-block; padding: 10px 20px; background-color: white; color: #2563eb; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 0.9rem; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                  Ver detalles
+              </a>
+          </div>
       </section>
   </main>
