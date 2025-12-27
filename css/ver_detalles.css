@@ -50,6 +50,17 @@
     background-color: #f3f4f6;
 }
 
+.pagination-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.btn-nav-date:hover .pagination-icon {
+    transform: scale(1.1);
+}
+
 .current-date-display {
     font-weight: 700;
     color: #111827;

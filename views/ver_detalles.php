@@ -16,11 +16,11 @@ $fechaSiguiente = (clone $fechaObj)->modify('+1 day')->format('Y-m-d');
 
     <div class="pagination-controls">
         <a href="index.php?vista=ver_detalles&fecha=<?php echo $fechaAnterior; ?>" class="btn-nav-date">
-            &larr; Anterior
+            <img class="pagination-icon" src="../img/fecha-izquierda.png" alt="Anterior">
         </a>
         <span class="current-date-display"><?php echo $fechaObj->format('d/m/Y'); ?></span>
         <a href="index.php?vista=ver_detalles&fecha=<?php echo $fechaSiguiente; ?>" class="btn-nav-date">
-            Siguiente &rarr;
+            <img class="pagination-icon" src="../img/flecha-derecha.png" alt="Siguiente">
         </a>
     </div>
 

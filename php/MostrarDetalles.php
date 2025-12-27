@@ -14,8 +14,8 @@ try {
     $SQL = "SELECT id, descripcion, monto, created_at, id_categoria 
             FROM gastos 
             WHERE id_usuario = :id_usuario 
-            AND DATE(created_at) = :fecha
-            ORDER BY created_at DESC";
+            AND DATE(fecha) = :fecha
+            ORDER BY fecha DESC";
 
     $gastosConsulta = conexion();
     $gastosConsulta = $gastosConsulta->prepare($SQL);
