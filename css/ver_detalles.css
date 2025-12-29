@@ -66,60 +66,99 @@
     color: var(--text-color);
 }
 
-.expenses-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* Tabla de gastos */
+.expenses-table-container {
     max-height: 50vh;
     overflow-y: auto;
-    padding-right: 5px;
     background: var(--card-bg);
     border-radius: var(--radius-lg);
-    padding: 15px;
+    padding: 0 15px 15px 15px;
     border: 1px solid var(--border-color);
 }
 
-/* Custom scrollbar for the list */
-.expenses-list::-webkit-scrollbar {
+/* Custom scrollbar */
+.expenses-table-container::-webkit-scrollbar {
     width: 6px;
 }
 
-.expenses-list::-webkit-scrollbar-thumb {
+.expenses-table-container::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 4px;
 }
 
-.expense-item {
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.expenses-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.expenses-table th {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 15px;
+    text-align: left;
+    position: sticky;
+    top: 0;
+}
+
+.expenses-table th:first-child {
+    border-radius: var(--radius-md) 0 0 0;
+    width: 60px;
+    text-align: center;
+}
+
+.expenses-table th:last-child {
+    border-radius: 0 var(--radius-md) 0 0;
+    width: 100px;
+    text-align: right;
+}
+
+.expenses-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s ease;
+}
+
+.expenses-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.expenses-table tbody tr:hover {
     background: var(--input-bg);
-    padding: 15px 20px;
-    border-radius: var(--radius-md);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--border-color);
-    flex-shrink: 0;
 }
 
-.expense-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.expense-name {
-    font-size: 1rem;
-    font-weight: 600;
+.expenses-table td {
+    padding: 12px 15px;
     color: var(--text-color);
+    font-size: 0.95rem;
 }
 
-.expense-id {
-    font-size: 0.75rem;
+.expense-id-cell {
+    text-align: center;
+    font-weight: 600;
     color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-.expense-amount-item {
-    font-size: 1.1rem;
+.expense-desc-cell {
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.expense-amount-cell {
+    text-align: right;
     font-weight: 700;
     color: #ef4444;
+    font-size: 1rem;
 }
 
 .no-expenses {

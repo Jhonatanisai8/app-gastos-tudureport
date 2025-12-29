@@ -28,21 +28,27 @@ $fechaSiguiente = (clone $fechaObj)->modify('+1 day')->format('Y-m-d');
         Total: <span class="total-amount">$<?php echo isset($totalDia) ? number_format($totalDia, 2) : '0.00'; ?></span>
     </div>
 
-    <div class="expenses-list">
+    <div class="expenses-table-container">
         <?php if (!empty($detallesGastos)): ?>
-            <?php foreach ($detallesGastos as $gasto): ?>
-                <div class="expense-item">
-                    <div class="expense-info">
-                        <span class="expense-name">
-                            <span class="expense-id" style="font-size: 0.8em; margin-left: 8px;">(ID: <?php echo $gasto['id']; ?>)</span>
-                            <?php echo !empty($gasto['descripcion']) ? htmlspecialchars($gasto['descripcion']) : 'Sin descripción'; ?>
-                        </span>
-                    </div>
-                    <div class="expense-amount-item">
-                        $<?php echo number_format($gasto['monto'], 2); ?>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+            <table class="expenses-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $numero = 1; ?>
+                    <?php foreach ($detallesGastos as $gasto): ?>
+                        <tr>
+                            <td class="expense-id-cell"><?php echo $numero++; ?></td>
+                            <td class="expense-desc-cell"><?php echo !empty($gasto['descripcion']) ? htmlspecialchars($gasto['descripcion']) : 'Sin descripción'; ?></td>
+                            <td class="expense-amount-cell">$<?php echo number_format($gasto['monto'], 2); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
         <?php else: ?>
             <div class="no-expenses">
                 <p>No hay gastos registrados para este día.</p>
