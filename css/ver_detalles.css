@@ -14,29 +14,29 @@
 
 .details-title {
     font-size: 2rem;
-    color: #2563eb;
+    color: var(--primary-color);
     font-weight: 800;
     margin-bottom: 5px;
 }
 
 .details-date {
     font-size: 1.1rem;
-    color: #6b7280;
+    color: var(--text-muted);
 }
 
 .pagination-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: var(--card-bg);
     padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
 }
 
 .btn-nav-date {
     text-decoration: none;
-    color: #2563eb;
+    color: var(--primary-color);
     font-weight: 600;
     padding: 8px 12px;
     border-radius: 6px;
@@ -47,7 +47,7 @@
 }
 
 .btn-nav-date:hover {
-    background-color: #f3f4f6;
+    background-color: var(--input-bg);
 }
 
 .pagination-icon {
@@ -63,24 +63,41 @@
 
 .current-date-display {
     font-weight: 700;
-    color: #111827;
+    color: var(--text-color);
 }
 
 .expenses-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 5px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+}
+
+/* Custom scrollbar for the list */
+.expenses-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.expenses-list::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
 }
 
 .expense-item {
-    background: white;
+    background: var(--input-bg);
     padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    border-radius: var(--radius-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #f3f4f6;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .expense-info {
@@ -91,23 +108,23 @@
 .expense-name {
     font-size: 1rem;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--text-color);
 }
 
 .expense-id {
     font-size: 0.75rem;
-    color: #9ca3af;
+    color: var(--text-muted);
 }
 
 .expense-amount-item {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #dc2626;
+    color: #ef4444;
 }
 
 .no-expenses {
     text-align: center;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-top: 30px;
     font-style: italic;
 }
@@ -116,10 +133,10 @@
     text-align: right;
     font-size: 1.2rem;
     font-weight: 800;
-    color: #111827;
+    color: var(--text-color);
     margin-top: 10px;
 }
 
 .total-amount {
-    color: #2563eb;
+    color: var(--primary-color);
 }
